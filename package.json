@@ -4,7 +4,7 @@
   "description": "Group project created by mentees at Underdog Devs",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
+    "start": "./node_modules/nodemon/bin/nodemon.js -L app.js",
     "server": "nodemon server"
   },
   "repository": {

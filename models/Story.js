@@ -24,8 +24,8 @@ const StorySchema = new mongoose.Schema({
     members: [
         {
             user: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'user'
+                type: mongoose.Schema.Types.ObjectId//,
+                // ref: 'user'
             },
         }
     ],

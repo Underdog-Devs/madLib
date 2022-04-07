@@ -16,6 +16,6 @@ app.use('/api/stories', require('./routes/api/stories'));
 app.use('/api/unapproved', require('./routes/api/unapproved'));
 app.use('/api/auth', require('./routes/api/auth'));
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 1515;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
