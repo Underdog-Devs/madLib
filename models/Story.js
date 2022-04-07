@@ -21,7 +21,7 @@ const StorySchema = new mongoose.Schema({
             }
         }
     ],
-    users: [
+    members: [
         {
             user: {
                 type: mongoose.Schema.Types.ObjectId,

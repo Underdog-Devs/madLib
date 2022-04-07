@@ -25,6 +25,7 @@ router.post("/",
         try {
             let user = await User.findOne({ email });
 
+            // Check if user exists
             if (user) {
                 return res.status(400).json({ errors: [{ msg: 'User already exists' }] })
             }
@@ -35,12 +36,22 @@ router.post("/",
                 password
             })
 
+            // Encrypt Password
             const salt = await bcrypt.genSalt(10)
 
             user.password = await bcrypt.hash(password, salt)
 
+            // Returns promise
             await user.save()
-            res.status(200).send("success")
+
+            res.status(200).send(user)
+            // const payload = {
+            //     user: {
+            //         id: user.id
+            //     }
+            // }
+
+            // jwt.sign
         } catch (err) {
             console.error(err.message)
             res.status(500).send('Server Error')
